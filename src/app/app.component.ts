@@ -14,6 +14,7 @@ public characters:Array<any> = [];
 public activeCharacter:any = {};
 public characterDetailModal:any = {};
 public activePlanet:any = {};
+public searchText:string;
 
 constructor(
 		public sw_api: StarWarsAPIService,
@@ -24,8 +25,8 @@ constructor(
 	  
 	  this.sw_api.getCharacters().subscribe((data:any) => {
 			  	this.characters = data.results;
-				},
-				(err) => {
+			},
+			(err) => {
 				  console.log(err);
 				});
       }

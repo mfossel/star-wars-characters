@@ -1,46 +1,44 @@
 <div class="jumbotron p-3 p-md-5 text-white rounded star-bg">
   <div class="col-md-6 px-0">
-    <img src="assets/sw_logo.png" />
+    <img class="ml-5" src="assets/sw_logo.png" />
     <h1 class="display-4 font-italic">Character Search</h1>
-    <!--<p class="lead my-3">Find your favorite characters!</p>-->
   </div>
   <div class="input-group search-bar">
     <input type="text" class="form-control" [(ngModel)]="searchText" />
     <div class="input-group-prepend">
-      <button class="btn btn-secondary" type="button">Search</button>
+      <button class="btn btn-secondary" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
     </div>
   </div>
 </div>
 
 <div class="container">
-
   <div class="row card-group">
     <div class="col-3" *ngFor="let character of characters | filter : searchText">
       <div class="card card-shadow" style="width: 18rem;">
         <div class="card-header">
-          <h5 class="card-title text-center">{{ character.name }}</h5>
+          <h4 class="card-title text-center">{{ character.name }}</h4>
         </div>
         <div class="card-body">
-          <table class="table">
+          <table class="table borderless">
             <tbody>
               <tr>
-                <td>Gender</td>
+                <td class="font-weight-bold">Gender</td>
                 <td>{{ character.gender | titlecase }}</td>
               </tr>
               <tr>
-                <td>Hair Color</td>
+                <td class="font-weight-bold">Hair Color</td>
                 <td>{{ character.hair_color | titlecase }}</td>
               </tr>
               <tr>
-                <td>Skin Color</td>
+                <td class="font-weight-bold">Skin Color</td>
                 <td>{{ character.skin_color | titlecase }}</td>
               </tr>
               <tr>
-                <td>Height</td>
+                <td class="font-weight-bold">Height</td>
                 <td>{{ character.height }} cm</td>
               </tr>
               <tr>
-                <td>Weight</td>
+                <td class="font-weight-bold">Weight</td>
                 <td>{{ character.weight}} kg</td>
               </tr>
             </tbody>
@@ -50,7 +48,6 @@
       </div>
     </div>
   </div>
-
 </div>
 
 

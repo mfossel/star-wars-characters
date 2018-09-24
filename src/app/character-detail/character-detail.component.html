@@ -3,38 +3,35 @@
 </div>
 
 <div *ngIf="loaded">
-
-    <div class="modal-header mx-auto">
+    <div class="modal-header">
         <h2>
             {{ activeCharacter.name }}
         </h2>
     </div>
     <div class="modal-body text-center">
-        <table class="table">
+        <table class="table borderless">
             <tbody>
                 <tr>
-                    <td>Birth Year</td>
-                    <td>{{ activeCharacter.birth_year }}</td>
+                    <td class="text-right font-weight-bold">Birth Year</td>
+                    <td class="text-left">{{ activeCharacter.birth_year }}</td>
                 </tr>
                 <tr>
-                    <td>Homeworld</td>
-                    <td>{{ homeworld }}</td>
+                    <td class="text-right font-weight-bold">Homeworld</td>
+                    <td class="text-left">{{ homeworld }}</td>
                 </tr>
                 <tr>
-                    <td>Species</td>
-                    <td>{{ species }}</td>
+                    <td class="text-right font-weight-bold">Species</td>
+                    <td class="text-left">{{ species }}</td>
                 </tr>
                 <tr>
-                    <td>Starship</td>
-                    <td>{{ starship }}</td>
+                    <td class="text-right font-weight-bold">Starship</td>
+                    <td class="text-left">{{ starship }}</td>
                 </tr>
                 <tr>
-                    <td>First Appearance</td>
-                    <td>{{ first_appearance }}</td>
+                    <td class="text-right font-weight-bold">First Appearance</td>
+                    <td class="text-left">{{ first_appearance }}</td>
                 </tr>
-
             </tbody>
         </table>
     </div>
-
 </div>
