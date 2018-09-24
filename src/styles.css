@@ -1,0 +1,14 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.star-bg {
+     background-image: url("assets/star_bg.jpeg");
+}
+
+img {
+    height:5em;
+}
+
+.jumbotron {
+    height:14em;
+    margin-bottom:5em;
+}

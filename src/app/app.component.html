@@ -1,0 +1,70 @@
+<div class="jumbotron p-3 p-md-5 text-white rounded star-bg">
+  <div class="col-md-6 px-0">
+    <img src="assets/sw_logo.png" />
+    <h1 class="display-4 font-italic">Character Search</h1>
+    <!--<p class="lead my-3">Find your favorite characters!</p>-->
+  </div>
+  <div class="input-group search-bar">
+    <input type="text" class="form-control" [(ngModel)]="searchText" />
+    <div class="input-group-prepend">
+      <button class="btn btn-secondary" type="button">Search</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="row card-group">
+    <div class="col-4 mb-5" *ngFor="let character of characters | filter : searchText">
+      <div class="card card-shadow" style="width: 18rem;">
+        <div class="card-header">
+          <h5 class="card-title text-center">{{ character.name }}</h5>
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Gender</td>
+                <td>{{ character.gender | titlecase }}</td>
+              </tr>
+              <tr>
+                <td>Hair Color</td>
+                <td>{{ character.hair_color | titlecase }}</td>
+              </tr>
+              <tr>
+                <td>Skin Color</td>
+                <td>{{ character.skin_color | titlecase }}</td>
+              </tr>
+              <tr>
+                <td>Height</td>
+                <td>{{ character.height }} cm</td>
+              </tr>
+              <tr>
+                <td>Weight</td>
+                <td>{{ character.weight}} kg</td>
+              </tr>
+            </tbody>
+          </table>
+          <button href="#" class="btn btn-outline-dark btn-block" (click)="openModal(characterDetailModal, character)">View Detail</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!--character detail modal-->
+<ng-template id="characterDetailModal" #characterDetailModal let-c="close" let-d="dismiss">
+  <div class="modal-header mx-auto">
+    <h2>
+      {{ activeCharacter.name }}
+    </h2>
+  </div>
+  <div class="modal-body text-center">
+      Homeworld: {{ activePlanet.name }}
+  </div>
+  <div class="modal-footer mx-auto">
+    <button class="btn btn-outline-danger" (click)="c()">Close</button>
+  </div>
+</ng-template>
