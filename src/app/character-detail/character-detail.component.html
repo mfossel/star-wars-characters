@@ -1,0 +1,40 @@
+<div class="text-center" *ngIf="!loaded">
+    <i class="fa fa-spinner fa-spin fa-4x p-2" aria-hidden="true"></i>
+</div>
+
+<div *ngIf="loaded">
+
+    <div class="modal-header mx-auto">
+        <h2>
+            {{ activeCharacter.name }}
+        </h2>
+    </div>
+    <div class="modal-body text-center">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>Birth Year</td>
+                    <td>{{ activeCharacter.birth_year }}</td>
+                </tr>
+                <tr>
+                    <td>Homeworld</td>
+                    <td>{{ homeworld }}</td>
+                </tr>
+                <tr>
+                    <td>Species</td>
+                    <td>{{ species }}</td>
+                </tr>
+                <tr>
+                    <td>Starship</td>
+                    <td>{{ starship }}</td>
+                </tr>
+                <tr>
+                    <td>First Appearance</td>
+                    <td>{{ first_appearance }}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</div>

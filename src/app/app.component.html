@@ -15,7 +15,7 @@
 <div class="container">
 
   <div class="row card-group">
-    <div class="col-4 mb-5" *ngFor="let character of characters | filter : searchText">
+    <div class="col-3" *ngFor="let character of characters | filter : searchText">
       <div class="card card-shadow" style="width: 18rem;">
         <div class="card-header">
           <h5 class="card-title text-center">{{ character.name }}</h5>
@@ -56,14 +56,7 @@
 
 <!--character detail modal-->
 <ng-template id="characterDetailModal" #characterDetailModal let-c="close" let-d="dismiss">
-  <div class="modal-header mx-auto">
-    <h2>
-      {{ activeCharacter.name }}
-    </h2>
-  </div>
-  <div class="modal-body text-center">
-      Homeworld: {{ activePlanet.name }}
-  </div>
+  <app-character-detail [activeCharacter]="activeCharacter"></app-character-detail>
   <div class="modal-footer mx-auto">
     <button class="btn btn-outline-danger" (click)="c()">Close</button>
   </div>

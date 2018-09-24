@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 import { FilterPipe} from './filter.pipe';
 
 import { StarWarsAPIService } from './star-wars-api.service';
+import { CharacterDetailComponent } from './character-detail/character-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FilterPipe
+    FilterPipe,
+    CharacterDetailComponent
   ],
   imports: [
     BrowserModule,

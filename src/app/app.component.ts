@@ -33,12 +33,6 @@ constructor(
    openModal(content, character){
      this.activeCharacter = character;
      this.characterDetailModal = this.modalService.open(content, {});
-     this.sw_api.getResults(this.activeCharacter.homeworld).subscribe((data:any) => {
-			  	this.activePlanet = data;
-				},
-				(err) => {
-				  console.log(err);
-				});
-     }
+   }
 
 }
